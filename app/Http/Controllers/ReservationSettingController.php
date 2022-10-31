@@ -13,8 +13,6 @@ class ReservationSettingController extends Controller
     }
 
     public function update(Request $request){
-        // return $request;
-
         try {
             $reservation_setting = ReservationSetting::whereId(1)->update($request->all());
             if($reservation_setting == 1){

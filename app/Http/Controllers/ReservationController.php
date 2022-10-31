@@ -20,11 +20,8 @@ class ReservationController extends Controller
 
         $setting = ReservationSetting::pluck('g')->first();
         $group_id = null;
-        // return $request;
-        // alter reservation datetime to some particular format
 
         $response = $this->validateReservation($request);
-        // return $response;
         DB::beginTransaction();
         try {
             if(!$response['data']['is_booking_restricted']){
